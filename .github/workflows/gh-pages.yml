@@ -1,4 +1,4 @@
-name: GitHub Pages Ghost CMS
+name: GitHub Pages Strapi CMS
 
 on:
   push:
@@ -39,6 +39,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
-          #github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_token: ${{ secrets.GHOST_CMS_UPDATE }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
