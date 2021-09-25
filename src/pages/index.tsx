@@ -1,5 +1,6 @@
 import { fetchAPI } from '../lib/api';
 import Layout from '../layouts';
+import { CMS_URL } from '../constants/root';
 
 const Home = ({ articles, home, menu, global }) => {
   return (
