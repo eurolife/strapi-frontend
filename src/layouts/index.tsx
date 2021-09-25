@@ -5,7 +5,7 @@ const Layout = ({children, menu, global}) => {
   return (
     <div className="container flex flex-col justify-start p-4 mx-auto min-h-screen">
       <div className="mt-2">
-        <a href="/">
+        <a href="https://eurolife.github.io/strapi-frontend/">
           <img src={`${CMS_URL}${global.logo.url}`} alt={global.company_name} style={{ width: '150px'}} />
         </a>
         
