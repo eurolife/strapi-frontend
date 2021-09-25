@@ -1,7 +1,9 @@
+import { CMS_URL } from "../constants/root";
+
 export function getStrapiURL(path = '') {
-  const url = 'ec2-3-8-148-62.eu-west-2.compute.amazonaws.com';
+  // const url = 'ec2-3-8-148-62.eu-west-2.compute.amazonaws.com';
   // const url = 'localhost:1337'
-  return `http://${url}${path}`;
+  return `${CMS_URL}${path}`;
 }
 
 // Helper to make GET requests to Strapi
