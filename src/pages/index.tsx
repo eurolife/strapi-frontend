@@ -5,7 +5,7 @@ const Home = ({ articles, home, menu, global }) => {
   return (
     <Layout menu={menu} global={global}>
       <h1 className="font-sans-serif text-3xl my-4">{home.Title}</h1>
-      <div><img src={`http://localhost:1337${home.Hero?.url}`} alt="" /></div>
+      <div><img src={`${CMS_URL}${home.Hero?.url}`} alt="" /></div>
       <div>{home.description}</div>
       {articles.map((blog) => (
         <div key={blog.id}>{blog.title}</div>
