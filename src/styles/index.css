@@ -3,4 +3,8 @@
 
 /* Your own custom component styles */
 
+nav ul li a {
+  @apply mr-4 text-xl text-green-500 transition duration-300 hover:text-black;
+}
+
 @import 'tailwindcss/utilities';

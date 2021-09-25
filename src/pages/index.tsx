@@ -1,27 +1,30 @@
 import { fetchAPI } from '../lib/api';
+import Layout from '../layouts';
 
-const Home = ({ blogs, home }) => {
+const Home = ({ articles, home, menu, global }) => {
   return (
-    <div className="container flex items-center p-4 mx-auto min-h-screen justify-center">
-      <main>
-        <h1 className="font-mono text-xl code">Website</h1>
-        {blogs.map((blog) => (
-          <div>{blog.title}</div>
-        ))}
-      </main>
-    </div>
+    <Layout menu={menu} global={global}>
+      <h1 className="font-sans-serif text-3xl my-4">{home.Title}</h1>
+      <div><img src={`http://localhost:1337${home.Hero?.url}`} alt="" /></div>
+      <div>{home.description}</div>
+      {articles.map((blog) => (
+        <div key={blog.id}>{blog.title}</div>
+      ))}
+    </Layout>
   )
 }
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [blogs, home] = await Promise.all([
+  const [articles, home, menu, global] = await Promise.all([
     fetchAPI('/blogs'),
-    fetchAPI('/home')
+    fetchAPI('/home'),
+    fetchAPI('/menu'),
+    fetchAPI('/global-settings')
   ]);
 
   return {
-    props: { blogs, home },
+    props: { articles, home, menu, global },
     revalidate: 1
   };
 }
