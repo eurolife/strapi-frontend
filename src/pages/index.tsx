@@ -3,6 +3,7 @@ import Layout from '../layouts';
 import { CMS_URL } from '../constants/root';
 
 const Home = ({ articles, home, menu, global }) => {
+  
   return (
     <Layout menu={menu} global={global}>
       <h1 className="font-sans-serif text-3xl my-4">{home.Title}</h1>
