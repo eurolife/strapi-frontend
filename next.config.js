@@ -18,7 +18,6 @@ module.exports = withPlugins([
   {
   assetPrefix: '/strapi-frontend/',
   basePath: '/strapi-frontend',
-  distDir: 'dist',
   pageExtensions: ["tsx", 'js'],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push(
