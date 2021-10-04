@@ -14,7 +14,7 @@ const Page = ({ menu, page, preview, global }) => {
           </div>
           
           <div className={`ml-4 ${item.Image_side === 'right'? 'order-1' : 'order-2'}`}>
-            {item.Content}
+            <Markdown>{item.Content}</Markdown>
           </div>
         </div>
       )
@@ -22,8 +22,12 @@ const Page = ({ menu, page, preview, global }) => {
     else if(item.__component === 'widgets.columned-text') {
       return (
         <div className="flex">
-          <div className="pr-4">{item.Firstcol}</div>
-          <div>{item.Secondcol}</div>
+          <div className="pr-4">
+            <Markdown>{item.Firstcol}</Markdown>
+          </div>
+          <div>
+            <Markdown>{item.Secondcol}</Markdown>
+          </div>
         </div>
       )
     }

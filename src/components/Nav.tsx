@@ -17,7 +17,7 @@ const Nav = ({ menu }) => {
   }
   return (
     <nav>
-      <ul className="flex">
+      <ul className="flex justify-end">
         {menu.item.map((item) => (
           <li key={item.id}>
             {renderLink(item)}

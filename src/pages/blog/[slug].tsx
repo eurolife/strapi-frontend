@@ -1,4 +1,5 @@
 import { fetchAPI } from '../../lib/api';
+import Markdown from 'markdown-to-jsx';
 import Nav from '../../components/Nav';
 import Layout from '../../layouts';
 import Link from 'next/link';
@@ -13,7 +14,9 @@ const BlogPage = ({article, menu, global}) => {
         <Link href="/blog"><a className="text-sm hover:text-green-500 transition duration-300">&laquo; Back to Blog main</a></Link>
       </div>
       <div><img src={`${CMS_URL}${article.Image.url}`} alt="" /></div>
-      <div>{article.content}</div>
+      <div className="mt-4">
+        <Markdown>{article.content}</Markdown>
+      </div>
     </Layout>
   )
 }

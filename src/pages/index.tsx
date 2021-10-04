@@ -1,17 +1,16 @@
 import { fetchAPI } from '../lib/api';
 import Layout from '../layouts';
 import { CMS_URL } from '../constants/root';
+import Markdown from 'markdown-to-jsx';
 
 const Home = ({ articles, home, menu, global }) => {
   
   return (
     <Layout menu={menu} global={global}>
       <h1 className="font-sans-serif text-3xl my-4">{home.Title}</h1>
-      <div><img src={`${CMS_URL}${home.Hero?.url}`} alt="" /></div>
-      <div>{home.description}</div>
-      {articles.map((blog) => (
-        <div key={blog.id}>{blog.title}</div>
-      ))}
+      <div><img src={`${CMS_URL}${home.Hero?.url}`} alt="Hero image" style={{width: '100%'}} /></div>
+      <div className="mt-4"><Markdown>{home.description}</Markdown></div>
+      
     </Layout>
   )
 }
