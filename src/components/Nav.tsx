@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Nav = ({ menu }) => {
+  const router = useRouter();
   const renderLink = (item) => {
     
     const slug = item.page?.slug ? item.page?.slug : item.slug;
@@ -19,12 +21,11 @@ const Nav = ({ menu }) => {
   }
 
   const renderSubmenu = (item) => {
-    if(item.subpages.length) {
+    if(item.subpages.length && item.page.slug === router.query.slug) {
       return (
         <ul className="flex">
           {item.subpages.map((item) => (
               <li key={item.id}>
-                {console.log(item)}
                 <Link href={`/${item.slug}`}>
                   <a className="font-normal text-gray-500">
                     {item.Title}
