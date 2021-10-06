@@ -8,9 +8,9 @@ const Page = ({ menu, page, preview, global }) => {
   const renderComponents = (item) => {
     if(item.__component === 'widgets.image-and-text') {
       return (
-        <div className="flex">
-          <div className={`${item.Image_side === 'right'? 'order-2' : 'order-1'}`}>
-            <img src={`${CMS_URL}${item.Image.url}`} alt="" style={{width: '250px'}} />
+        <div className="flex items-center">
+          <div className={`flex-shrink-0 ${item.Image_side === 'right'? 'order-2' : 'order-1'}`}>
+            <img src={`${CMS_URL}${item.Image.url}`} alt="" style={{width: '180px'}} />
           </div>
           
           <div className={`ml-4 ${item.Image_side === 'right'? 'order-1' : 'order-2'}`}>
